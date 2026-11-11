@@ -24,7 +24,7 @@ class Word
           if char == letter
             self.crypted_word[index] = letter
             right_attempt = true
-            puts "This word cointains #{letter}! at index #{index}"
+            puts "This word cointains #{letter}! at  position #{index}"
           end
      end 
      right_attempt
