@@ -83,6 +83,8 @@ class Game
 
     def save_game
       saves_path = File.expand_path('saves', __dir__) 
+      Dir.mkdir(saves_path) unless Dir.exist?(saves_path)
+
       file_path = File.join(saves_path, "save.json")
       File.write(file_path, self.to_json)
     end
