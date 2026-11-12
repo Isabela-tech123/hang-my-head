@@ -12,9 +12,14 @@ class Word
       end
     end
 
-    def initialize(word_list)
-      @word = word_list.sample.upcase
+    def initialize(word_list = nil, saved_word = nil, saved_crypted = nil)
+      if saved_word.nil?
+        @word = word_list.sample.upcase
       @crypted_word = Array.new(@word.length, "-")
+      else 
+        @word = saved_word
+        @crypted_word = saved_crypted
+      end
     end
 
     def compare_guess(player_guess)

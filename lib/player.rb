@@ -10,8 +10,11 @@ class Player
 
     loop do
        puts "Choose one letter and make your guess!"
+       puts "Hint! You can press '0' to exit, and the game will be saved!"
       guess = gets.chomp.downcase
 
+      break guess if guess == "0"
+      
       if guess.length != 1 
         puts "You can only choose ONE letter per time"
       elsif !guess.match?(/[a-z]/)
